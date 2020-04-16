@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+    <title>SlickGrid example 4: Model</title>
+    <link rel="stylesheet" href="http://6pac.github.io/SlickGrid/slick.grid.css" />
+    <link rel="stylesheet" href="http://6pac.github.io/SlickGrid/css/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="http://6pac.github.io/SlickGrid/examples/examples.css" />
+    <link rel="stylesheet" href="http://6pac.github.io/SlickGrid/slick-default-theme.css" />
+    <style type="text/css" rel="stylesheet">
+        .slickgrid_578350 .slick-group-header-column {
+            left: 1000px;
+        }
+
+        .slickgrid_578350 .slick-header-column {
+            left: 1000px;
+        }
+
+        .slickgrid_578350 .slick-top-panel {
+            height: 25px;
+        }
+
+        .slickgrid_578350 .slick-preheader-panel {
+            height: 25px;
+        }
+
+        .slickgrid_578350 .slick-headerrow-columns {
+            height: 25px;
+        }
+
+        .slickgrid_578350 .slick-footerrow-columns {
+            height: 25px;
+        }
+
+        .slickgrid_578350 .slick-cell {
+            height: 20px;
+        }
+
+        .slickgrid_578350 .slick-row {
+            height: 25px;
+        }
+
+        .slickgrid_578350 .l0 {}
+
+        .slickgrid_578350 .r0 {}
+
+        .slickgrid_578350 .l1 {}
+
+        .slickgrid_578350 .r1 {}
+
+        .slickgrid_578350 .l2 {}
+
+        .slickgrid_578350 .r2 {}
+
+        .slickgrid_578350 .l3 {}
+
+        .slickgrid_578350 .r3 {}
+
+        .slickgrid_578350 .l4 {}
+
+        .slickgrid_578350 .r4 {}
+
+        .slickgrid_578350 .l5 {}
+
+        .slickgrid_578350 .r5 {}
+    </style>
+</head>
+
+<body>
+    <table width="100%">
+        <tbody>
+            <tr>
+                <td valign="top" width="50%">
+                    <div id="myGrid1"
+                        style="width: 600px; height: 500px; overflow: hidden; outline: 0px; position: relative;"
+                        class="slickgrid_578350 ui-widget">
+                        <div tabindex="0" hidefocus="" style="position:fixed;width:0;height:0;top:0;left:0;outline:0;">
+                        </div>
+                        <div class="slick-pane slick-pane-header slick-pane-left" tabindex="0" style="width: 100%;">
+                            <div class="slick-header ui-state-default slick-header-left">
+                                <div class="slick-header-columns slick-header-columns-left"
+                                    style="left: -1000px; width: 1600px;" unselectable="on">
+                                    <div class="ui-state-default slick-header-column" id="slickgrid_578350title"
+                                        title="" style="width: 71px;"><span class="slick-column-name">Title</span>
+                                        <div class="slick-resizable-handle"></div>
+                                    </div>
+                                    <div class="ui-state-default slick-header-column" id="slickgrid_578350duration"
+                                        title="" style="width: 71px;"><span class="slick-column-name">Duration</span>
+                                        <div class="slick-resizable-handle"></div>
+                                    </div>
+                                    <div class="ui-state-default slick-header-column" id="slickgrid_578350%" title=""
+                                        style="width: 71px;"><span class="slick-column-name">% Complete</span>
+                                        <div class="slick-resizable-handle"></div>
+                                    </div>
+                                    <div class="ui-state-default slick-header-column" id="slickgrid_578350start"
+                                        title="" style="width: 71px;"><span class="slick-column-name">Start</span>
+                                        <div class="slick-resizable-handle"></div>
+                                    </div>
+                                    <div class="ui-state-default slick-header-column" id="slickgrid_578350finish"
+                                        title="" style="width: 71px;"><span class="slick-column-name">Finish</span>
+                                        <div class="slick-resizable-handle"></div>
+                                    </div>
+                                    <div class="ui-state-default slick-header-column" id="slickgrid_578350effort-driven"
+                                        title="" style="width: 71px;"><span class="slick-column-name">Effort
+                                            Driven</span>
+                                        <div class="slick-resizable-handle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slick-pane slick-pane-header slick-pane-right" tabindex="0" style="display: none;">
+                            <div class="slick-header ui-state-default slick-header-right">
+                                <div class="slick-header-columns slick-header-columns-right"
+                                    style="left: -1000px; width: 0px;" unselectable="on"></div>
+                            </div>
+                        </div>
+                        <div class="slick-pane slick-pane-top slick-pane-left" tabindex="0"
+                            style="top: 27px; height: 473px; width: 100%;">
+                            <div class="slick-headerrow ui-state-default" style="display: none; width: 100%;">
+                                <div
+                                    style="display: block; height: 1px; position: absolute; top: 0px; left: 0px; width: 497px;">
+                                </div>
+                                <div class="slick-headerrow-columns slick-headerrow-columns-left" style="width: 480px;">
+                                </div>
+                            </div>
+                            <div class="slick-top-panel-scroller ui-state-default" style="display: none;">
+                                <div class="slick-top-panel" style="width:10000px"></div>
+                            </div>
+                            <div class="slick-viewport slick-viewport-top slick-viewport-left" tabindex="0" hidefocus=""
+                                style="overflow: auto; height: 473px; width: 100%;">
+                                <div class="grid-canvas grid-canvas-top grid-canvas-left" tabindex="0" hidefocus=""
+                                    style="height: 12500px; width: 480px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slick-pane slick-pane-top slick-pane-right" tabindex="0" style="display: none;">
+                            <div class="slick-headerrow ui-state-default" style="display: none;">
+                                <div
+                                    style="display: block; height: 1px; position: absolute; top: 0px; left: 0px; width: 497px;">
+                                </div>
+                                <div class="slick-headerrow-columns slick-headerrow-columns-right"></div>
+                            </div>
+                            <div class="slick-top-panel-scroller ui-state-default" style="display: none;">
+                                <div class="slick-top-panel" style="width:10000px"></div>
+                            </div>
+                            <div class="slick-viewport slick-viewport-top slick-viewport-right" tabindex="0"
+                                hidefocus="" style="overflow: auto; height: 473px;">
+                                <div class="grid-canvas grid-canvas-top grid-canvas-right" tabindex="0" hidefocus=""
+                                    style="height: 12500px;"></div>
+                            </div>
+                        </div>
+                        <div class="slick-pane slick-pane-bottom slick-pane-left" tabindex="0" style="display: none;">
+                            <div class="slick-viewport slick-viewport-bottom slick-viewport-left" tabindex="0"
+                                hidefocus="" style="overflow: auto;">
+                                <div class="grid-canvas grid-canvas-bottom grid-canvas-left" tabindex="0" hidefocus="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slick-pane slick-pane-bottom slick-pane-right" tabindex="0" style="display: none;">
+                            <div class="slick-viewport slick-viewport-bottom slick-viewport-right" tabindex="0"
+                                hidefocus="" style="overflow: auto;">
+                                <div class="grid-canvas grid-canvas-bottom grid-canvas-right" tabindex="0" hidefocus="">
+                                </div>
+                            </div>
+                        </div>
+                        <div tabindex="0" hidefocus="" style="position:fixed;width:0;height:0;top:0;left:0;outline:0;">
+                        </div>
+                    </div>
+                </td>
+                <td valign="top" width="50%">
+                    <div id="myGrid2"
+                        style="width: 600px; height: 500px; overflow: hidden; outline: 0px; position: relative;"
+                        class="slickgrid_578350 ui-widget">
+                        <div tabindex="0" hidefocus="" style="position:fixed;width:0;height:0;top:0;left:0;outline:0;">
+                        </div>
+                        <div class="slick-pane slick-pane-header slick-pane-left" tabindex="0" style="width: 100%;">
+                            <div class="slick-header ui-state-default slick-header-left">
+                                <div class="slick-header-columns slick-header-columns-left"
+                                    style="left: -1000px; width: 1600px;" unselectable="on">
+                                    <div class="ui-state-default slick-header-column" id="slickgrid_578350title"
+                                        title="" style="width: 71px;"><span class="slick-column-name">Title</span>
+                                        <div class="slick-resizable-handle"></div>
+                                    </div>
+                                    <div class="ui-state-default slick-header-column" id="slickgrid_578350duration"
+                                        title="" style="width: 71px;"><span class="slick-column-name">Duration</span>
+                                        <div class="slick-resizable-handle"></div>
+                                    </div>
+                                    <div class="ui-state-default slick-header-column" id="slickgrid_578350%" title=""
+                                        style="width: 71px;"><span class="slick-column-name">% Complete</span>
+                                        <div class="slick-resizable-handle"></div>
+                                    </div>
+                                    <div class="ui-state-default slick-header-column" id="slickgrid_578350start"
+                                        title="" style="width: 71px;"><span class="slick-column-name">Start</span>
+                                        <div class="slick-resizable-handle"></div>
+                                    </div>
+                                    <div class="ui-state-default slick-header-column" id="slickgrid_578350finish"
+                                        title="" style="width: 71px;"><span class="slick-column-name">Finish</span>
+                                        <div class="slick-resizable-handle"></div>
+                                    </div>
+                                    <div class="ui-state-default slick-header-column" id="slickgrid_578350effort-driven"
+                                        title="" style="width: 71px;"><span class="slick-column-name">Effort
+                                            Driven</span>
+                                        <div class="slick-resizable-handle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slick-pane slick-pane-header slick-pane-right" tabindex="0" style="display: none;">
+                            <div class="slick-header ui-state-default slick-header-right">
+                                <div class="slick-header-columns slick-header-columns-right"
+                                    style="left: -1000px; width: 0px;" unselectable="on"></div>
+                            </div>
+                        </div>
+                        <div class="slick-pane slick-pane-top slick-pane-left" tabindex="0"
+                            style="top: 27px; height: 473px; width: 100%;">
+                            <div class="slick-headerrow ui-state-default" style="display: none; width: 100%;">
+                                <div
+                                    style="display: block; height: 1px; position: absolute; top: 0px; left: 0px; width: 497px;">
+                                </div>
+                                <div class="slick-headerrow-columns slick-headerrow-columns-left" style="width: 480px;">
+                                </div>
+                            </div>
+                            <div class="slick-top-panel-scroller ui-state-default" style="display: none;">
+                                <div class="slick-top-panel" style="width:10000px"></div>
+                            </div>
+                            <div class="slick-viewport slick-viewport-top slick-viewport-left" tabindex="0" hidefocus=""
+                                style="overflow: auto; height: 473px; width: 100%;">
+                                <div class="grid-canvas grid-canvas-top grid-canvas-left" tabindex="0" hidefocus=""
+                                    style="height: 12500px; width: 480px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slick-pane slick-pane-top slick-pane-right" tabindex="0" style="display: none;">
+                            <div class="slick-headerrow ui-state-default" style="display: none;">
+                                <div
+                                    style="display: block; height: 1px; position: absolute; top: 0px; left: 0px; width: 497px;">
+                                </div>
+                                <div class="slick-headerrow-columns slick-headerrow-columns-right"></div>
+                            </div>
+                            <div class="slick-top-panel-scroller ui-state-default" style="display: none;">
+                                <div class="slick-top-panel" style="width:10000px"></div>
+                            </div>
+                            <div class="slick-viewport slick-viewport-top slick-viewport-right" tabindex="0"
+                                hidefocus="" style="overflow: auto; height: 473px;">
+                                <div class="grid-canvas grid-canvas-top grid-canvas-right" tabindex="0" hidefocus=""
+                                    style="height: 12500px;"></div>
+                            </div>
+                        </div>
+                        <div class="slick-pane slick-pane-bottom slick-pane-left" tabindex="0" style="display: none;">
+                            <div class="slick-viewport slick-viewport-bottom slick-viewport-left" tabindex="0"
+                                hidefocus="" style="overflow: auto;">
+                                <div class="grid-canvas grid-canvas-bottom grid-canvas-left" tabindex="0" hidefocus="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slick-pane slick-pane-bottom slick-pane-right" tabindex="0" style="display: none;">
+                            <div class="slick-viewport slick-viewport-bottom slick-viewport-right" tabindex="0"
+                                hidefocus="" style="overflow: auto;">
+                                <div class="grid-canvas grid-canvas-bottom grid-canvas-right" tabindex="0" hidefocus="">
+                                </div>
+                            </div>
+                        </div>
+                        <div tabindex="0" hidefocus="" style="position:fixed;width:0;height:0;top:0;left:0;outline:0;">
+                        </div>
+                    </div>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="http://6pac.github.io/SlickGrid/lib/jquery-1.12.4.min.js"></script>
+    <script src="http://6pac.github.io/SlickGrid/lib/jquery.event.drag-2.3.0.js"></script>
+    <script src="http://6pac.github.io/SlickGrid/slick.core.js"></script>
+    <script src="http://6pac.github.io/SlickGrid/slick.grid.js"></script>
+
+
+    <script>
+
+
+        var grid;
+        
+        var columns = [
+            { id: "title", name: "Title", field: "title", formatter: formatter },
+            { id: "duration", name: "Duration", field: "duration", formatter: formatter },
+            { id: "%", name: "% Complete", field: "percentComplete", formatter: formatter },
+            { id: "start", name: "Start", field: "start", formatter: formatter },
+            { id: "finish", name: "Finish", field: "finish", formatter: formatter },
+            { id: "effort-driven", name: "Effort Driven", field: "effortDriven", formatter: formatter }
+        ];
+
+        var options = {
+            enableCellNavigation: true,
+            enableColumnReorder: false
+        };
+        var data = []
+        var groupData = []
+        var data1 = []
+        var data2 = []
+        var grid1
+        var grid2
+        $(function () {
+            for (var i = 0; i < 10; i++) {
+                data[i] = {
+                    title: "Task " + i,
+                    duration: "5 days",
+                    percentComplete: Math.round(Math.random() * 100),
+                    start: "01/01/2009",
+                    finish: "01/05/2009",
+                    effortDriven: i % 5
+                }
+            }
+
+            $.each(data, function(key, value) {
+                let array = {
+                        group: "",
+                        data: value
+                    }
+                array["group"] = value['effortDriven'] % 3 == 0 ? "A" : "B"
+                groupData.push(array)
+            })
+            let work = assign(groupData)
+            data1 = work['group1'];
+            data2 = work['group2'];
+
+            grid1 = new Slick.Grid("#myGrid1", data1, columns, options);
+            grid2 = new Slick.Grid("#myGrid2", data2, columns, options);
+
+            grid1.onClick.subscribe(function(e, arg) {
+                let item = this.getDataItem(arg["row"])
+                let title = item["title"]
+                judge(title)
+            })
+            grid2.onClick.subscribe(function(e, arg) {
+                let item = this.getDataItem(arg["row"])
+                let title = item["title"]
+                judge(title)
+            })
+        })
+
+        function judge(title) {
+            $.each(groupData, function(key, value) {
+                if(value["data"]["title"] == title) {
+                    groupData[key]["group"] = groupData[key]["group"] == "A" ? "B" : "A"
+                    return false
+                }
+            })
+            let res = assign(groupData)
+            data1 = res.group1
+            data2 = res.group2
+            grid1.setData(data1)
+            grid1.render()
+            grid2.setData(data2)
+            grid2.render()
+        }
+
+        function assign(group) {
+            let data1 = [];
+            let data2 = [];
+            $.each(group, function(key, value) {
+                if(value["group"] == "A") {
+                    data1.push(value["data"])
+                } else {
+                    data2.push(value["data"])
+                }
+            })
+            return {group1: data1, group2: data2}
+        }
+
+        function formatter(row, cell, value, columnDef, dataContext,grid) {
+            var name = $(grid.getContainerNode()).attr('id')
+
+            var id = columnDef.id
+            // if(name == "myGrid1" && row%3 == 0 ){
+            //     return 
+            // }
+            switch (id) {
+                case "title":
+                    
+                break;
+                case "duration":
+                break;
+                case "%":
+                break;
+                case "start":
+                break;
+                case "finish":
+                break;
+                case "effort-driven":
+                break;
+                default:
+                break;
+            }
+            
+            return value;
+        }
+    </script>
+</body>
+
+</html>
